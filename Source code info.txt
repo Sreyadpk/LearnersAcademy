@@ -1,0 +1,95 @@
+# LearnersAcademy
+com.dao package
+
+LoginDAO.java - Databse operations for admin table
+ClassDAO.java - Database operation for all other tables(students,classes,subjects,teachers,classsub)
+
+com.controller package -
+
+LoginServlet.java - Admin login operations
+ClassesServlet.java - Master list of classes
+StudServlet.java - Master list of students
+SubServlet.java - Master list of subjects
+TeachServlet.java - Master list of teachers
+AddClasses.java - calling JSP  page AddClass.jsp
+AddClassServlet.java - process admin input and add new class
+AddStudentServlet.java - calling JSP  page AddStudent.jsp
+AddStudServlet.java - process admin input and add new student
+AddSubjects.java  - calling JSP  page AddSubject.jsp
+AddSubjServlet.java - process admin input and add new subject
+AddTeachers.java -  calling JSP  page AddTeacher.jsp
+AddTeachServlet.java - process admin input and add new teacher
+ViewReport.java - creates view class report page
+ListStudents.java - List the students studying in a class
+ListSubjects.java - List the subjects for a class
+AssignSubject.java - creates assign subject page
+AssignSubServlet.java - process admin input for adding new subject/teacher to a class
+ 
+com.entity package -
+
+Java persistent Object for
+1.Admin - Admin.java
+2.Classes - classes.java
+3.Students - Students.java
+4.Teachers - Teachers.java
+5.Subjects - Subjects.java
+6.Classes and subjects - Classsub.java
+
+JSP Pages -
+index.jsp - Admin login page
+Mainmenu.jsp - main page
+AddClass.jsp - add class form
+AddStudent.jsp - add student form
+AddSubject.jsp - add subject form
+AddTeacher.jsp - add teacher form
+ViewReport.jsp - view class report page
+
+
+Student table
+------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| stuid      | int          | NO   | PRI | NULL    | auto_increment |
+| studname   | varchar(50)  | YES  |     | NULL    |                |
+| age        | int          | YES  |     | NULL    |                |
+| gender     | char(1)      | YES  |     | NULL    |                |
+| emailid    | varchar(100) | YES  |     | NULL    |                |
+| class_name | varchar(50)  | YES  |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+
+classes table
++--------------+-------------+------+-----+---------+----------------+
+| Field        | Type        | Null | Key | Default | Extra          |
++--------------+-------------+------+-----+---------+----------------+
+| classid      | int         | NO   | PRI | NULL    | auto_increment |
+| classname    | varchar(50) | YES  |     | NULL    |                |
+| tot_strength | int         | YES  |     | NULL    |                |
++--------------+-------------+------+-----+---------+----------------+
+
+teachers table
++---------+--------------+------+-----+---------+----------------+
+| Field   | Type         | Null | Key | Default | Extra          |
++---------+--------------+------+-----+---------+----------------+
+| tid     | int          | NO   | PRI | NULL    | auto_increment |
+| tname   | varchar(50)  | YES  |     | NULL    |                |
+| age     | int          | YES  |     | NULL    |                |
+| gender  | char(1)      | YES  |     | NULL    |                |
+| email   | varchar(100) | YES  |     | NULL    |                |
+| subject | varchar(50)  | YES  |     | NULL    |                |
++---------+--------------+------+-----+---------+----------------+
+
+Subjects table
++---------+-------------+------+-----+---------+----------------+
+| Field   | Type        | Null | Key | Default | Extra          |
++---------+-------------+------+-----+---------+----------------+
+| subid   | int         | NO   | PRI | NULL    | auto_increment |
+| subname | varchar(50) | YES  |     | NULL    |                |
++---------+-------------+------+-----+---------+----------------+
+classsub table
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| classname | varchar(50) | NO   | PRI | NULL    |       |
+| subname   | varchar(50) | NO   | PRI | NULL    |       |
+| teachname | varchar(50) | NO   |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
